@@ -153,21 +153,24 @@ div[data-media-provider] video {
   object-fit: contain;
 }
 
-/* Vidstack Menu 自定义样式：背景黑色，文字白色 */
-.vds-menu-items {
-  background-color: #000;
-  color: #fff;
+.art-poster {
+  background-size: contain !important; /* 使图片完整展示 */
+  background-position: center center !important; /* 居中显示 */
+  background-repeat: no-repeat !important; /* 防止重复 */
+  background-color: #000 !important; /* 其余区域填充为黑色 */
 }
 
-.vds-menu-items .vds-radio {
-  padding: 0rem 1rem; /* 减少单项内边距 */
-  margin: 0; /* 清除默认外边距 */
-}
+/* 隐藏移动端竖屏时的 pip 按钮 */
+@media (max-width: 768px) {
+  .art-control-pip {
+    display: none !important;
+  }
 
-.vds-menu-items .vds-radio + .vds-radio {
-  margin-top: 2px; /* 相邻项之间仅 2px 间隔 */
-}
+  .art-control-fullscreenWeb {
+    display: none !important;
+  }
 
-.vds-menu-items .vds-radio-label {
-  font-size: 0.875rem; /* 调小字号 */
+  .art-control-volume {
+    display: none !important;
+  }
 }
